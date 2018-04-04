@@ -8,10 +8,15 @@ get a valid token and automatically set the token for all requests in Postman co
 
 1. Click edit on a collection and copy the content of [keycloak-fetch-token-postman-pre-request.js](keycloak-fetch-token-postman-pre-request.js) into the "Pre-request Script" tab in Postman.
 
- ![Edit collection](/screenshots/postman-edit-script.png?raw=true)
+ <p align="center">
+  <img src="https://github.com/alexatiks/keycloak-postman-pre-request/raw/master/screenshots/postman-edit-script.png?raw=true" alt="Edit collection"/>
+</p>
 
 2. In the Authorization tab set the Type to Bearer Token and Token to {{token}}. This is the token we created and set via the pre-request script.
 
-  ![Manage Environments](/screenshots/postman-edit-auth.png?raw=true)
-
+ <p align="center">
+  <img src="https://github.com/alexatiks/keycloak-postman-pre-request/raw/master/screenshots/postman-edit-auth.png?raw=true" alt="Edit collection"/>
+</p>
+ 
 3. For all API requests: In the Authorization tab select Type - Inherit auth from parent
+4. ENJOY
