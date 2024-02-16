@@ -1,5 +1,7 @@
 # Postman pre-request script for authentication with Keycloak
 
+FORK: Adding skip when token has not expired.
+
 This is a javascript-Script for use with [Postman](https://www.getpostman.com/)'s pre-request script feature.
 It makes POST request to [Keycloak Token Endpoint](https://www.keycloak.org/docs/latest/authorization_services/#_service_overview) to
 get a valid token and automatically set the token for all requests in Postman collection.

@@ -1,3 +1,4 @@
+if (!pm.environment.has("token") || pm.environment.get("token_expiry") <= Date.now()) {
 var server       = ""; // add your Keycloak-URL here (without /auth)
 var realm        = ""; // the name of the realm
 var grantType    = "password"; // the granttype, with password you can login as a normal user
@@ -26,6 +27,11 @@ pm.sendRequest({
     var response_json = response.json();
     var token = response_json.access_token;
     pm.environment.set('token', token);
+    const expiresIn = response_json.expires_in;
+    pm.environment.set('token_expiry', Date.now() + (expiresIn * 1000));
     // You can open up the console in Postman with Alt + Ctrl + C
     console.log(token);
 });
+}else{
+    console.log("Token is still valid. Skipping...");
+}
